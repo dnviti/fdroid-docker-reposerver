@@ -25,11 +25,11 @@ The Dockerfile consists of two stages:
 
 5. Build the Docker image using the provided Dockerfile: `docker build -t fdroid-repo-server .` (you can also use `docker compose build` to use the default settings
 
-6. Run a container using the built image: `docker run -d -p 80:80 --name fdroid-repo-server fdroid-repo-server`
+6. Run a container using the built image: `docker run -d -p 80:80 --name fdroid-repo-server fdroid-repo-server` (or use `docker compose -f docker-compose-deploy.yaml up -d` to deploy with default settings)
 
-7. Access the Filebrowser web interface at `http://localhost` (or the appropriate IP address) and log in with the credentials specified in the `users.json` file.
+7. Access the Filebrowser web interface at `http://<your-server-ip>:8083` (or the appropriate IP address) and log in with the credentials specified in the `users.json` file.
 
-8. Share the F-Droid repository URL with your users. The URL should be in the format `http://<your-server-ip>/repo`.
+8. Share the F-Droid repository URL with your users. The URL to add to the repository list in F-Droid app should be in the format `http://<your-server-ip>:8084/repo`.
 
 9. Default username and password is admin/admin (please change the password at first configuration)
 
