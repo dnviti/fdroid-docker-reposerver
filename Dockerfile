@@ -19,5 +19,4 @@ RUN rm /etc/nginx/nginx.conf
 COPY nginx.conf /etc/nginx/nginx.conf
 EXPOSE 8084
 ENTRYPOINT []
-#CMD ["sh", "-c", "while true; do sleep 1; done"]
 CMD ["sh", "-c", "nginx && /filebrowser --config /config/settings.json"]
