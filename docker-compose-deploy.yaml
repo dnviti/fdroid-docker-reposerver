@@ -5,7 +5,6 @@ services:
     restart: always
     environment:
       - TZ=Europe/Rome
-    command: [ "--config", "/config/settings.json" ]
     volumes:
       - repo:/fdroid/repo
       - fbdb:/database
