@@ -15,6 +15,9 @@ FROM filebrowser/filebrowser AS final
 RUN apk update && apk add nginx
 COPY --from=build /fdroid/ /
 COPY settings.json /config/settings.json
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+RUN rm /etc/nginx/nginx.conf
+COPY nginx.conf /etc/nginx/nginx.conf
 EXPOSE 8084
-CMD ["--config", "/config/settings.json", "&", "nginx", "&", "wait"]
+ENTRYPOINT []
+#CMD ["sh", "-c", "while true; do sleep 1; done"]
+CMD ["sh", "-c", "nginx && /filebrowser --config /config/settings.json"]
