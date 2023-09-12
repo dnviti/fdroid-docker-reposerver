@@ -37,4 +37,8 @@ The Dockerfile consists of two stages:
 
 You can modify the Dockerfile and the `settings.json` and `users.json` files according to your specific requirements. For more information on Filebrowser settings and authentication methods, refer to the [Filebrowser documentation](https://filebrowser.org/configuration/authentication-method).
 
-Credits to [FileBrowser](https://github.com/filebrowser) for his amazing work, more details at [filebrowser.org](https://filebrowser.org/)
+
+## Credits
+
+- [FileBrowser](https://github.com/filebrowser) for his amazing work, more details at [filebrowser.org](https://filebrowser.org/)
+- [F-Droid](https://f-droid.org/it/) for the amazing open source repo app store
