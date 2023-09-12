@@ -1,0 +1,12 @@
+version: "3"
+services:
+  repo:
+    image: dnviti/fdroid-reposerver
+    restart: always
+    environment:
+      - TZ=Europe/Rome
+    ports:
+      - 8083:80
+    build:
+      context: .
+      dockerfile: Dockerfile

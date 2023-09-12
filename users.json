@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "username": "admin",
+    "password": "$2a$10$9hR3U9G8cPGg2f6jP0U8UO9hJ1z7E5aZ6d8N7nG9vWUO9hJ1z7E5a",
+    "scope": "/",
+    "locale": "en",
+    "viewMode": "mosaic",
+    "perm": {
+      "admin": true,
+      "execute": true,
+      "create": true,
+      "rename": true,
+      "modify": true,
+      "delete": true,
+      "share": true,
+      "download": true
+    }
+  }
+]

@@ -1,0 +1,17 @@
+version: "3"
+services:
+  repo:
+    image: dnviti/fdroid-reposerver
+    restart: always
+    environment:
+      - TZ=Europe/Rome
+    command: [ "--config", "/config/settings.json" ]
+    volumes:
+      - repo:/fdroid/repo
+      - fbdb:/database
+    ports:
+      - 8083:80
+
+volumes:
+  fbdb:
+  repo:

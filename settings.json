@@ -1,0 +1,12 @@
+{
+  "port": 80,
+  "baseURL": "",
+  "address": "0.0.0.0",
+  "log": "stdout",
+  "database": "/database/filebrowser.db",
+  "root": "/fdroid/repo",
+  "auth": {
+    "method": "json",
+    "file": "/config/users.json"
+  }
+}
