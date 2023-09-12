@@ -23,7 +23,7 @@ The Dockerfile consists of two stages:
 
 4. Place your custom apps (APK files) in the `/repo` directory.
 
-5. Build the Docker image using the provided Dockerfile: `docker build -t fdroid-repo-server .`
+5. Build the Docker image using the provided Dockerfile: `docker build -t fdroid-repo-server .` (you can also use `docker compose build` to use the default settings
 
 6. Run a container using the built image: `docker run -d -p 80:80 --name fdroid-repo-server fdroid-repo-server`
 
