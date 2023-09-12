@@ -1,5 +1,8 @@
 # F-Droid Repo Server with Filebrowser
 
+Docker Hub Pre-Built image: [fdroid-reposerver](https://hub.docker.com/r/dnviti/fdroid-reposerver)
+You can also use the `docker-compose-deploy.yaml` from here to automate the process.
+
 This Dockerfile creates a Docker image that deploys an F-Droid repository server using Alpine Linux and serves the `/repo` directory using Filebrowser with authentication.
 
 ## Overview
