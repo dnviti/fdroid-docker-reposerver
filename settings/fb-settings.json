@@ -7,6 +7,6 @@
   "root": "/fdroid/repo",
   "auth": {
     "method": "json",
-    "file": "/config/users.json"
+    "file": "/usr/local/.fbconfig/users.json"
   }
 }

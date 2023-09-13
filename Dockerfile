@@ -11,9 +11,9 @@ RUN fdroid init -v
 RUN fdroid update
 # serve the /repo directory using Filebrowser and NGINX
 RUN apt-get install -y nginx curl
-RUN rm /etc/nginx/nginx.conf
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY settings/nginx.conf /etc/nginx/nginx.conf
 RUN curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash
-COPY settings.json /config/settings.json
+COPY settings/fb-settings.json /usr/local/.fbconfig/settings.json
+COPY settings/fb-users.json /usr/local/.fbconfig/users.json
 ENTRYPOINT []
 CMD ["bash", "-c", "nginx && /usr/local/bin/filebrowser --config /config/settings.json"]
