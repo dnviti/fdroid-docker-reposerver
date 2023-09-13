@@ -6,11 +6,11 @@ services:
     environment:
       - TZ=Europe/Rome
     volumes:
-      - repo:/fdroid/repo
-      - fbdb:/database
+      - fdroid:/fdroid
+      - filebrowser:/database
     ports:
       - ${WEB_PORT-8083}:80
       - ${REPO_PORT-8084}:8084
 volumes:
-  fbdb:
-  repo:
+  filebrowser:
+  fdroid:

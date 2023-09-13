@@ -1,5 +1,5 @@
-# First stage: build the F-Droid repository
-FROM ubuntu AS build
+# build the F-Droid repository
+FROM ubuntu
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update
 RUN apt-get install -y software-properties-common
@@ -9,14 +9,11 @@ RUN apt-get install -y fdroidserver
 WORKDIR /fdroid
 RUN fdroid init -v
 RUN fdroid update
-
-# Second stage: serve the /repo directory using Filebrowser and NGINX
-FROM filebrowser/filebrowser AS final
-RUN apk update && apk add nginx
-COPY --from=build /fdroid/ /
-COPY settings.json /config/settings.json
+# serve the /repo directory using Filebrowser and NGINX
+RUN apt-get install -y nginx curl
 RUN rm /etc/nginx/nginx.conf
 COPY nginx.conf /etc/nginx/nginx.conf
-EXPOSE 8084
+RUN curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash
+COPY settings.json /config/settings.json
 ENTRYPOINT []
-CMD ["sh", "-c", "nginx && /filebrowser --config /config/settings.json"]
+CMD ["bash", "-c", "nginx && /usr/local/bin/filebrowser --config /config/settings.json"]
