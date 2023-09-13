@@ -3,7 +3,7 @@
   "baseURL": "",
   "address": "0.0.0.0",
   "log": "stdout",
-  "database": "/database/filebrowser.db",
+  "database": "/usr/local/.fbconfig/filebrowser.db",
   "root": "/fdroid/repo",
   "auth": {
     "method": "json",
