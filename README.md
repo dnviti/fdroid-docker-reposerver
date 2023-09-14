@@ -29,6 +29,15 @@ The Dockerfile consists of two stages:
 
 You can modify the Dockerfile and the `settings.json` and `users.json` files according to your specific requirements. For more information on Filebrowser settings and authentication methods, refer to the [Filebrowser documentation](https://filebrowser.org/configuration/authentication-method).
 
+## Versioning
+
+To enable automatic updates managed by F-Droid app you need to specify VersionName(string) and VersionCode(uint).
+In case the app has been built using Xamarin or MAUI you'll need to specify the options below in your current .csproj file:
+```xml
+<ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
+<ApplicationVersion>1</ApplicationVersion>
+```
+
 
 ## Credits
 
