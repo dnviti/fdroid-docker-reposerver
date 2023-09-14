@@ -29,6 +29,16 @@ The Dockerfile consists of two stages:
 
 You can modify the Dockerfile and the `settings.json` and `users.json` files according to your specific requirements. For more information on Filebrowser settings and authentication methods, refer to the [Filebrowser documentation](https://filebrowser.org/configuration/authentication-method).
 
+You can use a custom Keystore, to do so you'll have to generate your own:
+- On Windows you can use **keytool**
+  1. `keytool -genkey -v -keystore keystore_name.p12 -alias keystore_alias -keyalg RSA -keysize 2048 -storetype pkcs12 -validity 10000`
+  1. If you are using Visual Studio and Xamarin or MAUI you have to provide a keystore in a .keystore format, to convert the .p12 to .keystore run the following command `keytool -importkeystore -srckeystore keystore_name.p12 -srcstoretype PKCS12 -destkeystore keystore_name.keystore -deststoretype JKS`
+- On Linux you can use **openssl**
+  1. `openssl genrsa -out myKey.pem 2048`
+  1. `openssl req -new -key myKey.pem -out cert.csr`
+  1. `openssl x509 -req -days 365 -in cert.csr -signkey myKey.pem -out myCert.pem`
+  1. `openssl pkcs12 -export -out keystore.p12 -inkey myKey.pem -in myCert.pem`
+
 ## Versioning
 
 To enable automatic updates managed by F-Droid app you need to specify VersionName(string) and VersionCode(uint).
