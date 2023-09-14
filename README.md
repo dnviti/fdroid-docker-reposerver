@@ -38,6 +38,8 @@ You can use a custom Keystore, to do so you'll have to generate your own:
   1. `openssl req -new -key myKey.pem -out cert.csr`
   1. `openssl x509 -req -days 365 -in cert.csr -signkey myKey.pem -out myCert.pem`
   1. `openssl pkcs12 -export -out keystore.p12 -inkey myKey.pem -in myCert.pem`
+- Then upload the new keystore to the /fdroid folder and edit the config.yml accordingly
+- If you upload a new app signed using the generated keystore then it will be available for download from F-Droid app
 
 ## Versioning
 
