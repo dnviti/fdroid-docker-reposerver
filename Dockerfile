@@ -24,7 +24,7 @@ RUN python3 -m venv /opt/venv
 RUN git clone --recursive https://github.com/androguard/androguard.git && \
     cd androguard && \
     git reset --hard v4.1.2 && \
-    /opt/venv/bin/pip install . --break-system-packages --ignore-installed=typing_extensions
+    /opt/venv/bin/pip install . --break-system-packages --ignore-installed
 
 # Make the androguard package available to the system Python (used by fdroidserver)
 # (Adjust the Python version folder below if your Ubuntu base uses a different version.)
