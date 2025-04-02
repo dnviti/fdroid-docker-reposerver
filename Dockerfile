@@ -6,6 +6,16 @@ RUN apt-get install -y software-properties-common
 RUN add-apt-repository ppa:fdroid/fdroidserver
 RUN apt-get update
 RUN apt-get install -y fdroidserver
+RUN apt-get -y update && \
+    apt-get -y dist-upgrade && \
+    apt-get -y install python3-pip
+
+# we install a recent version of androguard
+RUN git clone --recursive https://github.com/androguard/androguard.git && \
+    cd androguard && \
+    git reset --hard v4.1.2 && \
+    pip install . --break-system-packages
+
 WORKDIR /fdroid
 RUN fdroid init -v
 RUN fdroid update
