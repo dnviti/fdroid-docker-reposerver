@@ -14,7 +14,7 @@ RUN apt-get -y update && \
 RUN git clone --recursive https://github.com/androguard/androguard.git && \
     cd androguard && \
     git reset --hard v4.1.2 && \
-    pip install . --break-system-packages
+    pip install . --break-system-packages --ignore-installed=typing_extensions
 ### -------------------------- ###
 WORKDIR /fdroid
 RUN fdroid init -v
